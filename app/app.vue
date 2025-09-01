@@ -1,7 +1,13 @@
 <script setup lang="ts">
 const authStore = useAuthStore()
 await useAsyncData('getLoggedUser', async () => {
-  await authStore.getLoggedUser()
+  try {
+    await authStore.getLoggedUser()
+    return authStore.user
+  } catch (e) {
+    console.error('Error fetching user:', String(e))
+    return null
+  }
 })
 </script>
 <template>

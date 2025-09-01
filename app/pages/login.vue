@@ -3,7 +3,7 @@ import {useLoginForm} from "~/composables/form/loginForm";
 
 definePageMeta({
   layout: 'blank',
-  // middleware: 'guest',
+  middleware: 'guest',
 })
 
 const router = useRouter();
