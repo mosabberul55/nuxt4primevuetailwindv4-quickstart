@@ -91,10 +91,10 @@ export const useAuthStore = defineStore('auth', () => {
         const { data, error, execute, refresh } = await getData('auth/profile')
         if (data) {
             if ((data.value as any)?.roles) {
-                await setRoles((data.value as any)?.roles)
+                // await setRoles((data.value as any)?.roles)
                 delete (data.value as any).roles
             }
-            await setUser(data.value ?? null)
+            // await setUser(data.value ?? null)
         }
         return { data, error, execute, refresh }
     }
